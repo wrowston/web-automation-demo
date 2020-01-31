@@ -13,18 +13,15 @@ def login():
     login_element = browser.find_element_by_id("loginUsername")
     password_element = browser.find_element_by_id("loginPassword")
 
-    print(login_element.is_displayed())
-    print(password_element.is_displayed())
-
     login_element.send_keys("willrowston@gmail.com")
     password_element.send_keys(pyin.inputPassword())
     password_element.submit()
 
-login()
-
 def go_to_my_team_page():
-    my_team = browser.find_element_by_link_text("My Team")
+    my_team = browser.find_element_by_xpath('//a[@href="/my-team"]')
     my_team.click()
 
+
+login()
 go_to_my_team_page()
 
